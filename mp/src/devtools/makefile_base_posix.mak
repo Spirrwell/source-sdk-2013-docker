@@ -113,7 +113,9 @@ else
 	SSE_GEN_FLAGS = -msse2 -mfpmath=sse
 endif
 
-CCACHE := $(SRCROOT)/devtools/bin/linux/ccache
+# Disable CCACHE for now, docker build doesn't seem to like this
+CCACHE :=
+#CCACHE := $(SRCROOT)/devtools/bin/linux/ccache
 
 ifeq ($(origin AR), default)
 	AR = $(STEAM_RUNTIME_PATH)/bin/ar crs
